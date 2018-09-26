@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="{{ config.extra.author }}">
+
+    <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+
+    <title>{% block title %}{{config.title}}{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+        {% endblock header %}
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <img class="icon" src="{{ get_url(path="icons/cc.svg") }}" aria-label="CC">
+        <img class="icon" src="{{ get_url(path="icons/by.svg") }}" aria-label="BY">
+        <img class="icon" src="{{ get_url(path="icons/sa.svg") }}" aria-label="SA">
+
+        2018 Erin Moon
+    </footer>
+</body>
+</html>

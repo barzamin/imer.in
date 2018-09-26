@@ -1,0 +1,10 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.icon {
+    height: 1em;
+    width: 1em;
+    position: relative;
+    bottom: -0.125em;
+}
