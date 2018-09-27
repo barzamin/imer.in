@@ -1,0 +1,9 @@
+[build]
+publish = "public/"
+command = "gutenberg build"
+
+[build.environment]
+GUTENBERG_VERSION = "0.4.2"
+
+[context.deploy-preview]
+command = "gutenberg build --base-url $DEPLOY_PRIME_URL"
