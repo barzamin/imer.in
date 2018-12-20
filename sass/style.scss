@@ -1,10 +1,53 @@
+@import 'normalize';
+@import 'colors';
+@import 'fonts';
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
 
+// make icon SVGs take their parent tag's color.
+svg.icon {
+    fill: currentColor;
+}
+
+// ==== sticky footer ====
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    > header, > footer {
+        flex-shrink: 0;
+    }
+
+    & > main {
+        flex-grow: 1;
+    }
+}
+
+// ==== color scheme & fonts ====
+body {
+    background: $background;
+    font-family: $body-font;
+}
+
+header {
+    font-family: $heading-font;
+}
+
+// ==== fix svg icon positioning ====
 .icon {
     height: 1em;
     width: 1em;
     position: relative;
     bottom: -0.125em;
+}
+
+// ==== main page ====
+header.title { font-size: 2em; }
+
+.my-name {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px $highlight;
 }
