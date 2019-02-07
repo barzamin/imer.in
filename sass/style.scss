@@ -26,14 +26,15 @@ body {
     }
 }
 
+// === don't run into the edges of the screen ===
+main {
+    padding: 1em;
+}
+
 // ==== color scheme & fonts ====
 body {
     background: $background;
     font-family: $body-font;
-}
-
-header {
-    font-family: $heading-font;
 }
 
 // ==== fix svg icon positioning ====
@@ -45,19 +46,22 @@ header {
 }
 
 // ==== main page ====
-header.title { font-size: 2em; }
+header.title > h1 { font-size: 2em; }
 
 .my-name {
-    font-size: 1.5em;
-    text-shadow: 1px 1px 2px $highlight;
+    color: $background;
+    background-color: $text;
 }
 
 body > footer {
-    margin: 0.3em;
-    font-size: 1.25em;
-}
+    border: 1px solid $highlight;
 
-body {
-    >footer, >header, >main {
-    }
+    margin: 0.3em;
+    padding: 0.2em;
+    font-size: 1.25em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
