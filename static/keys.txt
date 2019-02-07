@@ -1,0 +1,24 @@
+--- omemo: erin@5222.de ---
+LAST UPDATED: Jan 09 2019
+
+>> phone <<
+77eaf975 e04cd688 3ad1ad09 1d2d3200
+76e8d17d 7d7f9eef 7ebe5e9a b920817f
+
+>> desktop (gajim) <<
+589BD50A 4D8F3204 49C8100A 20E02BC3
+6BE03A34 8A2B8F77 F4B6CF12 51362439
+
+
+-------- wire keys --------
+LAST UPDATED: Feb 06 2019
+            | Feb 13 2018
+
+>> desktop (web)    <<
+a9 67 b3 30 d2 1c fe 5a 66 14 ef d1 d8 a6 00 b4
+67 9d 78 a5 38 23 c1 c6 92 39 2a 3b 12 fd 46 ae
+
+>> phone            <<
+82 b7 28 18 7f d3 56 73 20 e8 15 3a 9d ac c3 e3
+e8 0b be 92 c7 5d 94 32 35 c6 86 0b 74 b5 af 66
+
