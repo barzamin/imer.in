@@ -73,3 +73,27 @@ body > footer {
     justify-content: space-between;
     align-items: center;
 }
+
+footer > div.footer-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    a:first-child { padding-right: 0.2em; }
+    a:last-child { padding-left: 0.2em; }
+    a:not(first-child):not(last-child) {
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+    }
+
+    a + a {
+        border-left: 2px solid $highlight;
+    }
+}
+
+.socials-grid {
+    a {
+        margin: 1em;
+        color: blue;
+    }
+}

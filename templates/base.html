@@ -8,6 +8,7 @@
     <meta name="author" content="{{ config.extra.author }}">
 
     <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 
     <title>{% block title %}{{config.title}}{% endblock title %}</title>
 </head>
@@ -23,8 +24,9 @@
     </main>
 
     <footer>
-        <div>
+        <div class="footer-row">
             <a href="/">home</a>
+            <a href="/socials">socials</a>
         </div>
 
         <div>
