@@ -1,7 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Vesper+Libre');
-@import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+@font-face {
+    font-family: "EVA-Matisse Classic";
+    src: url("/fonts/EVA-Matisse_Classic.ttf");
+}
 
-$body-font: "Vesper Libre", serif;
-$header-font: "Lato", sans-serif;
+@font-face {
+    font-family: "MingLiU";
+    src: url("/fonts/MingLiU.ttf")
+         url("/fonts/MingLiU.woff");
+}
+
+
+$body-font: "MingLiU";
+// $body-font: "Vesper Libre", serif;
+$header-font: "EVA-Matisse Classic", sans-serif;
 $mono-font: "Share Tech Mono", monospace;

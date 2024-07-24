@@ -34,6 +34,7 @@ main {
 // ==== color scheme & fonts ====
 body {
     background: $background;
+    color: $text;
     font-family: $body-font;
 }
 
@@ -45,6 +46,13 @@ code, pre {
     font-family: $mono-font;
 }
 
+a {
+    color: $highlight;
+    &:visited {
+        color: darken($highlight, 10%);
+    }
+}
+
 // ==== fix svg icon positioning ====
 .icon {
     height: 1em;
@@ -54,11 +62,25 @@ code, pre {
 }
 
 // ==== main page ====
-header.title > h1 { font-size: 2em; }
+header.title > h1 {
+    font-size: 2em;
+    // display: inline-block;
+    margin-bottom: 1em;
+    transform: scale(1,2);
+}
 
-.my-name {
+header.title > h2 {
+    // display: inline-block;
+    transform: scale(1,1.5);
+}
+
+.backspin {
     color: $background;
     background-color: $text;
+}
+
+header {
+    margin-bottom: 5em;
 }
 
 body > footer {

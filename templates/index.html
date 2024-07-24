@@ -2,28 +2,67 @@
 {% block content %}
 <section>
   <header class="title">
-    <h1>Hi! I'm <span class="my-name">Erin</span>.</h1>
-    <h2>I'm a {<s>eecs student</s> computer engineer 😱, fake mathematician, musician, machinist, hacker}.</h2>
+    <h1>Hi! I'm <span class="backspin">Erin</span> .<sub>⎇❀№</sub></h1>
+
+    <h2 id="pickme-chuunibyou">crickets chirp, the hum of a  c r t. everything we need is already here</h2>
   </header>
 </section>
+
 <section>
-  <p>Things I have worked on include:</p>
-  <ul>
-    <li><a href="https://github.com/rustodon/rustodon">Rustodon</a>, a <a href="https://joinmastodon.org">Mastodon</a>-compatible <a href="https://activitypub.rocks">ActivityPub</a> server implemented in <a href="https://www.rust-lang.org">Rust</a>,</li>
-    <li>✨<a href="https://github.com/barzamin/sparkle">sparkle</a>✨, a microkernel written in Rust with lofty goals and similarly lofty procrastination skills,</li>
-    <li><a href="https://github.com/gcnhax">GCNHax</a>, a collection of tools for romhacking Nintendo GameCube games and bending them to your will,</li>
-    <li><a href="https://github.com/barzamin/guy">guy</a>, a tool for reverse-engineering (Verilog) netlists from GAL JEDEC fusefiles,</li>
-    <li>and <a href="https://github.com/barzamin/windpup">windpup</a>, an ESP32-C3 based DB25 serial DCE which plugs into a DTE (by design, DEC terminals) to provide ssh/telnet wifi softmodem functionality.</li>
+  <p>Artifices and contrivances willed by my hand:</p>
+  <ul data-shuffle>
+    <li><a href="https://github.com/rustodon/rustodon">Rustodon</a>, a <a
+        href="https://joinmastodon.org">Mastodon</a>-compatible <a href="https://activitypub.rocks">ActivityPub</a>
+      server implemented in <a href="https://www.rust-lang.org">Rust</a></li>
+    <li>✨<a href="https://github.com/barzamin/sparkle">sparkle</a>✨, a microkernel written in Rust with lofty goals and
+      similarly lofty procrastination skills</li>
+    <li><a href="https://github.com/gcnhax">GCNHax</a>, a collection of tools for romhacking Nintendo GameCube games and
+      bending them to your will</li>
+    <li><a href="https://github.com/barzamin/guy">guy</a>, a tool for reverse-engineering (Verilog) netlists from GAL
+      JEDEC fusefiles</li>
+    <li><a href="https://github.com/barzamin/windpup">windpup</a>, an ESP32-C3 based DB25 serial DCE which plugs
+      into a DTE (by design, DEC terminals) to provide ssh/telnet wifi softmodem functionality</li>
   </ul>
-  
-  <p>I am a member of the <a href="https://blahaj.awoo.systems/">BLÅHAJ</a> CTF team, which placed 10th in the Hack-a-Sat qualifiers and received a DEFCON invite.</p>
 
-  <p>I am currently contributing to the Zelda RE Team <a href="https://github.com/zeldaret/tp">decompilation project for LoZ: Twilight Princess</a>.
+  <p>I did Hack-a-Sat 2020 with the <a href="https://blahaj.awoo.systems/">BLÅHAJ</a> CTF team, placing 10th in the qualifiers and receiving a DEFCON invite.</p>
+
+  <p>I love romhacking and game reverse engineering; video games are some of the coolest pieces of software you can build (fast DSP code, graphics math, the beauty of duct-taped together game logic...). I've contributed to the Zelda RE Team <a href="https://github.com/zeldaret/tp">decompilation project for
+      LoZ: Twilight Princess</a>.
     If I wanted to pad my résumé, this is a "manual oracle attack against a monolithic compiler".
-    I also helped <a href="https://github.com/magcius/mchi">reverse engineer the debug tools</a> for Twilight Princess, which let us do <a href="https://twitter.com/JasperRLZ/status/1334787733877735424">stuff like this</a>.</p>
+    I also helped <a href="https://github.com/magcius/mchi">reverse engineer the debug tools</a> for Twilight Princess,
+    which let us do <a href="https://twitter.com/JasperRLZ/status/1334787733877735424">stuff like this</a>.</p>
 
-  <p>In the past, I contributed to the <a href="https://github.com/glitch-soc/mastodon">glitch-soc</a> fork of Mastodon, as well as the <a href="https://github.com/tootsuite/mastodon">upstream</a>.</p>
+  <p>In the past, I contributed to the <a href="https://github.com/glitch-soc/mastodon">glitch-soc</a> fork of Mastodon,
+    as well as the <a href="https://github.com/tootsuite/mastodon">upstream</a>.</p>
 
-  <p>As a side project, I run <a href="https://www.hecke.rs/">hecke.rs</a>, a set of semi-public services targeted at users of the ActivityPub fediverse, including mail, chat, RSS aggregation, Git hosting, and collaborative notepads.</p>
+  <p>As a side project, I run <a href="https://www.hecke.rs/">hecke.rs</a>, a set of semi-public services which was initially targeted at
+    users of the ActivityPub fediverse, including mail, chat, RSS aggregation, Git hosting, and collaborative notepads. It's basically just me and a few old friends on that infrastructure at this point, though.
+  </p>
 </section>
+
+<script>
+  document.querySelectorAll('ul[data-shuffle]').forEach((ul) => {
+    // fisher yates
+    for (var i = ul.children.length; i >= 0; i--) {
+      el = ul.children[Math.random() * i | 0]; // rtz with (x | 0)
+      ul.appendChild(el); // moves existing child
+
+      // pretty :3
+      if (i == 0) { // last element in the list
+        el.innerHTML = `and ${el.innerHTML}.`;
+      } else {
+        el.innerHTML = `${el.innerHTML},`;
+      }
+    }
+  });
+
+  const chuunis = [
+    "crickets chirp, the hum of a  c r t. everything we need is already here",
+    "every city a flesh-machine, our very own god's will packed into a retroviral casing",
+  ];
+  const i = Math.random()*chuunis.length | 0;
+  const ordinals = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth'];
+  const chuuni = `<code class="backspin">[${ordinals[i]}&dagger;of&dagger;its&dagger;kind]</code> <i>${chuunis[i]}</i>`;
+  document.getElementById('pickme-chuunibyou').innerHTML = chuuni;
+</script>
 {% endblock content %}
