@@ -83,6 +83,11 @@ header {
     margin-bottom: 5em;
 }
 
+.indent {
+    padding-left: 1.5em;
+    border-left: 1px solid $text;
+}
+
 body > footer {
     border: 1px solid $highlight;
 
@@ -119,3 +124,4 @@ footer > div.footer-row {
         color: blue;
     }
 }
+
