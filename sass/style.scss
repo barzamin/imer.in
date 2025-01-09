@@ -62,16 +62,28 @@ a {
 }
 
 // ==== main page ====
-header.title > h1 {
+header { margin-bottom: 1em; }
+header.title h1 {
     font-size: 2em;
-    // display: inline-block;
     margin-bottom: 1em;
+    display: inline-block;
     transform: scale(1,2);
+    transform-origin: top left;
+
+    @media (max-width: 340px) {
+        font-size: 1.5em;
+    }
 }
 
-header.title > h2 {
-    // display: inline-block;
+header.title h2 {
+    font-size: 1.5em;
+    display: inline-block;
     transform: scale(1,1.5);
+    transform-origin: top left;
+
+    @media (max-width: 340px) {
+        font-size: 1em;
+    }
 }
 
 .backspin {
@@ -79,8 +91,12 @@ header.title > h2 {
     background-color: $text;
 }
 
-header {
-    margin-bottom: 5em;
+.divider-0 {
+    width: 100%;
+    height: 2em;
+    background-image: url('divid_3m_tile_color.png');
+    background-size: contain;
+    background-repeat: repeat-x;
 }
 
 .indent {
