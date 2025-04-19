@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<a rel="me" href="https://social.mecanis.me/@er1n"></a>
 <section>
   <header class="title">
     <div>
@@ -13,47 +14,55 @@
 </section>
 <div class="divider-0"></div>
 <section>
-  <p>Artifices and contrivances willed by my hand:</p>
+  <p>Artifices and contrivances willed by my hand: <small><em>&dagger;&mdash;abandoned</em></small></p>
   <ul data-shuffle>
-    <li><a href="https://github.com/rustodon/rustodon">Rustodon</a>, a <a
-        href="https://joinmastodon.org">Mastodon</a>-compatible <a href="https://activitypub.rocks">ActivityPub</a>
+  <li><a href="https://github.com/rustodon/rustodon">Rustodon</a>&dagger;, an <a href="https://activitypub.rocks">ActivityPub</a>
       server implemented in <a href="https://www.rust-lang.org">Rust</a></li>
-    <li>✨<a href="https://github.com/barzamin/sparkle">sparkle</a>✨, a microkernel written in Rust with lofty goals and
+  <li>✨<a href="https://github.com/barzamin/sparkle">sparkle</a>✨&dagger;, a microkernel written in Rust with lofty goals and
       similarly lofty procrastination skills</li>
-    <li><a href="https://github.com/gcnhax">GCNHax</a>, a collection of tools for romhacking Nintendo GameCube games and
+  <li><a href="https://github.com/gcnhax">GCNHax</a>, a collection of tools for romhacking Nintendo GameCube games and
       bending them to your will</li>
-    <li><a href="https://github.com/barzamin/guy">guy</a>, a tool for reverse-engineering (Verilog) netlists from GAL
+  <li><a href="https://github.com/barzamin/guy">guy</a>, a tool for reverse-engineering (Verilog) netlists from GAL
       JEDEC fusefiles</li>
-    <li><a href="https://github.com/barzamin/windpup">windpup</a>, an ESP32-C3 based DB25 serial DCE which plugs
+  <li><a href="https://github.com/barzamin/windpup">windpup</a>, an ESP32-C3 based DB25 serial DCE which plugs
       into a DTE (by design, DEC terminals) to provide ssh/telnet wifi softmodem functionality</li>
   </ul>
+
+  <p>Sometimes I write about the things I've done:</p>
+  {% set labnotes = get_section(path="labnotes/_index.md") %}
+  <ol type="i">
+  {% for page in labnotes.pages %}
+  <li><a href="{{page.permalink}}">{{page.title}}</a></li>
+  {% endfor %}
+  </ol>
 
   <p>I did Hack-a-Sat 2020 with the <a href="https://blahaj.awoo.systems/">BLÅHAJ</a> CTF team, placing 10th in the qualifiers and receiving a DEFCON invite.</p>
 
   <p>I love romhacking and game reverse engineering; video games are <i>sick</i>, <i>artful</i> software (fast DSP code, graphics math, the beauty of duct-taped together game logic...):
-    <div class="indent">
-      <p>
-      I used to work with the Zelda RE Team on the <a href="https://github.com/zeldaret/tp">LoZ: Twilight Princess decompilation</a>.
-      If I wanted to pad my résumé, this is a "manual oracle attack against a monolithic compiler".
-      I also helped <a href="https://github.com/magcius/mchi">reverse engineer the debug tools</a> for Twilight Princess,
-      which let us do <a href="https://twitter.com/JasperRLZ/status/1334787733877735424">stuff like this</a>.
-      </p>
+  <div class="indent">
+  I used to work with the Zelda RE Team on the <a href="https://github.com/zeldaret/tp">LoZ: Twilight Princess decompilation</a>.
+  If I wanted to pad my résumé, this is a "manual oracle attack against a monolithic compiler".
 
-      <p>
-      I've also contributed to <a href="https://github.com/Brawlback-Team">brawlback</a>'s infrastructure and tooling.
-      </p>
-    </div>
+  I also helped <a href="https://github.com/magcius/mchi">reverse engineer the debug tools</a> for Twilight Princess,
+  which let us <a href="https://twitter.com/JasperRLZ/status/1334787733877735424">play with the debug UI used while developing the game</a>.
+
+  I've also contributed to <a href="https://github.com/Brawlback-Team">brawlback</a>'s infrastructure and tooling.
+  </div>
   </p>
 
   <p>In the past, I contributed to the <a href="https://github.com/glitch-soc/mastodon">glitch-soc</a> fork of Mastodon,
-    as well as the <a href="https://github.com/tootsuite/mastodon">upstream</a>.</p>
+  as well as the <a href="https://github.com/tootsuite/mastodon">upstream</a>.</p>
 
-  <p>As a side project, I run <a href="https://www.hecke.rs/">hecke.rs</a>, a set of semi-public services which was initially targeted at
-    users of the ActivityPub fediverse, including mail, chat, RSS aggregation, Git hosting, and collaborative notepads. It's basically just me and a few old friends on that infrastructure at this point, though.
+  <p>I run <a href="https://www.hecke.rs/">hecke.rs</a>, a set of semi-public services which was initially targeted at
+  users of the ActivityPub fediverse, including <a href="https://mail.hecke.rs">mail</a>, <a href="https://code.hecke.rs">Git hosting</a>, and <a href="https://md.hecke.rs">collaborative notepads</a>. It's basically just me and a few old friends on that infrastructure at this point, though.
   </p>
+
+
+
+  {{ section.content | safe }}
 </section>
 
-<script>
+<script async>
   document.querySelectorAll('ul[data-shuffle]').forEach((ul) => {
     // fisher yates
     for (var i = ul.children.length; i >= 0; i--) {
@@ -75,8 +84,39 @@
     "this scene? <u>burn it into your eyes.</u>"
   ];
   const i = Math.random()*chuunis.length | 0;
-  const ordinals = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth'];
-  const chuuni = `<code class="backspin">[${ordinals[i]}&dagger;of&dagger;its&dagger;kind]</code> <i>${chuunis[i]}</i>`;
+  const digits = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const decades = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+  function ordinal(i) {
+    if (i < 20) {
+      return ['zeroth', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth',
+              'eleventh', 'twelfth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth'][i];
+    } else if (i < 100) {
+      return decades[((i/10) | 0) - 2]
+        + ((i % 10 == 0) ? (decades[((i/10) | 0) - 2].slice(0, -1) + 'ieth')
+                        : ('-' + ordinal(i % 10)));
+    } else if (i < 1000) {
+      let s = digits[((i/100) | 0)] + ' hundred';
+      if (i % 100 != 0) { s += ' and ' + ordinal(i % 100); }
+      return s;
+    }
+  }
+  const chuuni = `<code class="backspin">[${ordinal(i)}&dagger;of&dagger;its&dagger;kind]</code> <i>${chuunis[i]}</i>`;
   document.getElementById('pickme-chuunibyou').innerHTML = chuuni;
 </script>
 {% endblock content %}
+
+{% block footer_post %}
+<span class="beats">
+last♩:<span id="beats-last"></span>
+</span>
+<script async>
+    const elBeatsLast = document.getElementById('beats-last');
+    function updatebeats() {
+    fetch('https://heart.imer.in/api/info').then(v => v.json())
+      .then(dat => {
+        elBeatsLast.innerText = dat['time_difference'];
+      });
+  }
+  updatebeats(); setInterval(updatebeats, 60_000);
+</script>
+{% endblock footer_post %}
