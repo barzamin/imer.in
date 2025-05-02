@@ -44,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 
 code, pre {
     font-family: $mono-font;
+    font-size: 1em;
 }
 
 a {
@@ -167,4 +168,8 @@ footer > div.footer-row {
 
 .post-body img {
     max-width: 100%;
+}
+
+pre {
+    overflow: scroll;
 }
