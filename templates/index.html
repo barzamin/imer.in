@@ -30,7 +30,7 @@
 
   <p>Sometimes I write about the things I've done:</p>
   {% set labnotes = get_section(path="labnotes/_index.md") %}
-  <ol type="i">
+  <ol reversed type="i">
   {% for page in labnotes.pages %}
   <li><a href="{{page.permalink}}">{{page.title}}</a></li>
   {% endfor %}
