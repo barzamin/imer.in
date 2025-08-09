@@ -13,6 +13,15 @@
   </header>
 </section>
 <div class="divider-0"></div>
+<section class="callout">
+    <h2>temporary contact details for <span class="invert">DEF CON</span></h2>
+    <p>i can be found at:</p>
+    <ul data-shuffle>
+        <li><a href="https://twitter.com/3m00n_">3m00n_</a> on twitter</li>
+        <li><code>moon</code> on discord</li>
+        <li><code>moon.33</code> on signal</li>
+    </ul>
+</section>
 <section>
   <p>Artifices and contrivances willed by my hand: <small><em>&dagger;&mdash;abandoned</em></small></p>
   <ul data-shuffle>
@@ -65,12 +74,12 @@
 <script async>
   document.querySelectorAll('ul[data-shuffle]').forEach((ul) => {
     // fisher yates
-    for (var i = ul.children.length; i >= 0; i--) {
+    for (var i = ul.children.length; i > 0; i--) {
       el = ul.children[Math.random() * i | 0]; // rtz with (x | 0)
       ul.appendChild(el); // moves existing child
 
       // pretty :3
-      if (i == 0) { // last element in the list
+      if (i == 1) { // last element in the list
         el.innerHTML = `and ${el.innerHTML}.`;
       } else {
         el.innerHTML = `${el.innerHTML},`;
