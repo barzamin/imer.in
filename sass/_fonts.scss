@@ -5,13 +5,13 @@
 
 @font-face {
     font-family: "MingLiU";
-    src: url("/fonts/MingLiU.ttf")
-         url("/fonts/MingLiU.woff");
+    src: url("/fonts/MingLiU.ttf") url("/fonts/MingLiU.woff");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
 $body-font: "MingLiU";
 // $body-font: "Vesper Libre", serif;
 $header-font: "EVA-Matisse Classic", sans-serif;
+$sans-font: "Helvetica", sans-serif;
 $mono-font: "Share Tech Mono", monospace;
