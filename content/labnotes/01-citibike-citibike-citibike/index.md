@@ -85,7 +85,7 @@ the key requests here (actually, the only ones doing anything functional!) are
 }
 ```
 `source` and `trip_purpose` are both enums, and i know they look like
-```protobuf
+```proto
 enum TripPurpose {
     UNKNOWN_TRIP_PURPOSE = 0;
     PERSONAL = 1;
