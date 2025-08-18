@@ -89,8 +89,7 @@ header {
 
 header.title h1 {
     font-size: 2em;
-    margin-bottom: 1em;
-    display: inline-block;
+    margin-bottom: 0.3em;
     transform: scale(1, 2);
     transform-origin: top left;
 
@@ -101,7 +100,6 @@ header.title h1 {
 
 header.title h2 {
     font-size: 1.5em;
-    display: inline-block;
     transform: scale(1, 1.5);
     transform-origin: top left;
 

@@ -4,7 +4,6 @@
 <section>
   <header class="title" id="title-reflow">
     <h1>Hi! I'm <span class="backspin">Erin</span> .<sub>⎇❀№</sub></h1>
-
     <h2 id="pickme-chuunibyou" class="font-sans">crickets chirp, the hum of a  c r t. everything we need is already here</h2>
   </header>
 </section>
@@ -70,10 +69,11 @@
 <script async>
   function layout() {
     const elReflow = document.getElementById('title-reflow');
-    const totalHeight = Array.prototype.map.call(elReflow.children, (child) => {
-      return child.getBoundingClientRect().height;
-    }).reduce((a, c) => a + c, 0);
-    elReflow.style.height = `${totalHeight}px`;
+    for (const child of elReflow.children) {
+      child.style.minHeight = 'unset';
+      console.log(`child ${child.tagName} ${child.getBoundingClientRect().height}px`);
+      child.style.minHeight = `${child.getBoundingClientRect().height}px`;
+    }
   }
   window.addEventListener('resize', layout);
   window.addEventListener('load', layout);
