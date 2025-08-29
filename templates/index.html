@@ -71,7 +71,6 @@
     const elReflow = document.getElementById('title-reflow');
     for (const child of elReflow.children) {
       child.style.minHeight = 'unset';
-      console.log(`child ${child.tagName} ${child.getBoundingClientRect().height}px`);
       child.style.minHeight = `${child.getBoundingClientRect().height}px`;
     }
   }
